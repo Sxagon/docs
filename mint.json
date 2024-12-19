@@ -2,17 +2,17 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "MSCMSv2 API library",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/primary_color_light.svg",
+    "light": "/logo/primary_color_dark.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/icon_dark.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#056dff",
+    "light": "#056dff",
+    "dark": "#056dff",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#056dff",
+      "to": "#0a54ff"
     }
   },
   "topbarLinks": [],
