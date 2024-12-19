@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "MSCMSv2 API library",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
