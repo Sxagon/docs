@@ -1,0 +1,68 @@
+---
+title: 'Auth'
+description: 'Log in customer'
+icon: 'unlock'
+---
+
+## Example of usage
+```ts
+import { auth } from '@batlify/mscms-api'
+
+async function login(username: string) {
+
+    // Currently there are only two types of login
+    // 1. classic (login via your webstore)
+    // 2. minecraft (login via your minecraft server)
+    await auth.login('classic',username)
+        .then((result) => {
+
+             // User is banned from this store
+             if (result.status === 'banned') {
+                console.log("You're banned from this store")
+
+             // Login successful
+             } else if (result.status === 'success') {
+                console.log("Login successful! Welcome!")
+
+             // Login failed
+             } else if (result.status === 'failed') {
+                console.log("Oops! Something went wrong :/", result.error)
+             }
+        })
+        .catch((e) => {
+
+            // Login failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function authCheck() {
+    await auth.isLoggedIn()
+        .then((result) => {
+
+            // Returns true/false if user is(n't) logged in
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Checking if user is logged in failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function goodbye() {
+    await auth.logout()
+        .then((result) => {
+
+            // Returns true
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Logging out failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```
+
+You don't need to manually store authorization token into your cookies/store. This library will do it for you and use it for all (authorization needed) requests to the MineStoreCMS API.

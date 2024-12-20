@@ -1,0 +1,24 @@
+---
+title: 'Customer Profile'
+description: 'Get data from customer profile'
+icon: 'diamond'
+---
+
+## Example of usage
+```ts
+import { profile } from '@batlify/mscms-api'
+
+async function profileData(username: string) {
+    await profile.get(username)
+        .then((result) => {
+
+            // Returns profile data
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting profile data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

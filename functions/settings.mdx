@@ -1,0 +1,24 @@
+---
+title: 'Webstore Settings'
+description: 'Get data from webstore settings'
+icon: 'gear'
+---
+
+## Example of usage
+```ts
+import { settings } from '@batlify/mscms-api'
+
+async function settingsData(username: string) {
+    await settings.get()
+        .then((result) => {
+
+            // Returns webstore settings data (currencies, languages, footer links, etc...)
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting webstore settings data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

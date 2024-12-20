@@ -1,0 +1,52 @@
+---
+title: 'Discounts'
+description: 'Using discounts'
+icon: 'percent'
+---
+
+## Example of usage
+```ts
+import { discounts } from '@batlify/mscms-api'
+
+async function checkCouponOrGiftCard(type: 'giftcard' | 'coupon', code?: string) {
+    await discounts.check(type, code)
+        .then((result) => {
+
+            // Returns giftcard/coupon check result (data, status [success/failed])
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Checking giftcard/coupon failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function applyCouponOrGiftCard(code: string) {
+    await discounts.apply(code)
+        .then((result) => {
+
+            // Returns apply result (success/failed)
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Applying coupon failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function removeCouponOrGiftCard(type: 'giftcard' | 'coupon') {
+    await discounts.remove(type)
+        .then((result) => {
+
+            // Returns remove result (success/failed)
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Removing giftcard/coupon failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

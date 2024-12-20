@@ -1,0 +1,72 @@
+---
+title: 'Products'
+description: 'Get data from custom page'
+icon: 'box'
+---
+
+## Example of usage
+### Only for authorized users (logged in)
+```ts
+import { productsForAuthorized } from '@batlify/mscms-api'
+
+async function product(id: string) {
+    await productsForAuthorized.get(id)
+        .then((result) => {
+
+            // Returns product's data
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting product's data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function categoryProducts(path: string) {
+    await productsForAuthorized.getFromCategory(path)
+        .then((result) => {
+
+            // Returns products data
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting products data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function featuredPackages(path: string) {
+    await productsForAuthorized.getFeatured(path)
+        .then((result) => {
+
+            // Returns featured products data
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting featured products data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```
+
+### For everyone (for unauthorized users - guests - not logged in)
+```ts
+import { productsForGuest } from '@batlify/mscms-api'
+
+async function guestProduct() {
+    await productsForGuest.get()
+        .then((result) => {
+
+            // Returns product's data
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting product's data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

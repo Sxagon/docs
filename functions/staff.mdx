@@ -1,0 +1,24 @@
+---
+title: 'Staff'
+description: 'Get store staff'
+icon: 'people'
+---
+
+## Example of usage
+```ts
+import { staff } from '@batlify/mscms-api'
+
+async function staffData(username: string) {
+    await staff.get()
+        .then((result) => {
+
+            // Returns staff data (members, ...)
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting staff data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

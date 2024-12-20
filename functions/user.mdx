@@ -1,0 +1,24 @@
+---
+title: 'User'
+description: 'Returns information about the user (after user is logged in)'
+icon: 'user'
+---
+
+## Example of usage
+```ts
+import { user } from '@batlify/mscms-api'
+
+async function userData() {
+    await user.getUser()
+        .then((result) => {
+
+            // Returns user data or message "Unauthorized - Need to be logged in"
+            console.log("User data", result)
+        })
+        .catch((e) => {
+
+            // Getting user data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

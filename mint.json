@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "MSCMSv2 API library",
+  "name": "MineStoreCMS v3 API library",
   "logo": {
     "dark": "/logo/primary_color_light.svg",
     "light": "/logo/primary_color_dark.svg"
@@ -28,19 +28,14 @@
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
+      "name": "Get library",
+      "icon": "npm",
       "url": "https://mintlify.com/docs"
     },
     {
-      "name": "Community",
-      "icon": "slack",
+      "name": "Get MineStoreCMS",
+      "icon": "coins",
       "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
     }
   ],
   "navigation": [
@@ -48,19 +43,27 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        "quickstart"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Functions",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "functions/auth",
+        "functions/user",
+        "functions/accessibility",
+        "functions/annoucement",
+        "functions/pages",
+        "functions/profile",
+        "functions/staff",
+        "functions/settings",
+        "functions/categories",
+        "functions/products",
+        "functions/referrals",
+        "functions/discounts",
+
+        "functions/cart",
+        "functions/payment"
       ]
     },
     {

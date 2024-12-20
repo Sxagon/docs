@@ -1,0 +1,24 @@
+---
+title: 'Custom Pages'
+description: 'Get data from custom page'
+icon: 'paperclip'
+---
+
+## Example of usage
+```ts
+import { pages } from '@batlify/mscms-api'
+
+async function pageData() {
+    await pages.get()
+        .then((result) => {
+
+            // Returns custom page data
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting custom page data failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

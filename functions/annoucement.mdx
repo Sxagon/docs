@@ -1,0 +1,24 @@
+---
+title: 'Announcement'
+description: 'Get announcements from your store'
+icon: 'info'
+---
+
+## Example of usage
+```ts
+import { announcement } from '@batlify/mscms-api'
+
+async function importantNotification() {
+    await announcement.get()
+        .then((result) => {
+
+            // Returns announcement data
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting store's announcement failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

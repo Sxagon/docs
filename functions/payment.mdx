@@ -1,0 +1,57 @@
+---
+title: 'Payments'
+description: 'Create payments/getting payment methods'
+icon: 'coins'
+---
+
+## Example of usage
+```ts
+import { payment } from '@batlify/mscms-api'
+
+async function paymentMethods() {
+    await payment.getMethods()
+        .then((result) => {
+
+            // Returns payment methods list
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting payment methods list failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function createPayment(data: any /* Lazy to create example types */) {
+    await payment.create(data)
+        .then((result) => {
+
+            // Returns result (payment url etc)
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Creating payment failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+const data = {
+    'details': {
+        'fullname': 'Michal Lipka',
+        'email': 'info@batlify.com',
+        'address1': 'Korunní 2569/108',
+        'address2': '',
+        'city': 'Prague',
+        'region': 'Vinohrady',
+        'country': 'Czech Republic',
+        'zipcode': '10100 ',
+    },
+    'termsAndConditions': true,
+    'privacyPolicy': true,
+    'paymentMethod': 'stripe',
+    'currency': 'EUR',
+}
+
+createPayment(data)
+```

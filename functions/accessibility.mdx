@@ -1,0 +1,29 @@
+---
+title: 'Accessibility'
+description: 'Check if user is able to visit your store'
+icon: 'ban'
+---
+
+## Example of usage
+```ts
+import { accessibility } from '@batlify/mscms-api'
+
+// Haha, joke. You don't need name your function as "banana"...
+async function banana() {
+    await accessibility.check()
+        .then((result) => {
+
+            // Check if visitor is able to visit your store
+            if(result.status === 'banned') {
+                console.log(result.message)
+            } else {
+                console.log("You're welcome")
+            }
+        })
+        .catch((e) => {
+
+            // Getting visitor's accessibility failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

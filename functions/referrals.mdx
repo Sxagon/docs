@@ -1,0 +1,38 @@
+---
+title: 'Referrals'
+description: 'Using referrals'
+icon: 'ticket'
+---
+
+## Example of usage
+```ts
+import { referrals } from '@batlify/mscms-api'
+
+async function use(code: string) {
+    await referrals.apply(code)
+        .then((result) => {
+
+            // Returns apply result (success/failed)
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Applying referral failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+
+async function unUse() {
+    await referrals.remove()
+        .then((result) => {
+
+            // Returns remove result (success/failed)
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Removing referral failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```

@@ -1,0 +1,24 @@
+---
+title: 'Categories'
+description: 'Get list of categories'
+icon: 'list'
+---
+
+## Example of usage
+```ts
+import { categories } from '@batlify/mscms-api'
+
+async function categoriesList() {
+    await categories.get()
+        .then((result) => {
+
+            // Returns list of categories and subcategories
+            console.log(result)
+        })
+        .catch((e) => {
+
+            // Getting categories list failed
+            console.log("Oops! Something went wrong :/", e)
+        })
+}
+```
